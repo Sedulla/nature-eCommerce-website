@@ -1,0 +1,82 @@
+/* CARD PAGE */
+
+.card {
+  margin: 20rem auto;
+}
+
+table {
+  @include size(100%);
+  border-collapse: collapse;
+}
+
+.card-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-info span {
+  color: $grey2;
+}
+
+th {
+  text-align: left;
+  padding: 0.5rem;
+  color: $white;
+  background-color: $primary;
+  font-weight: normal;
+}
+
+td {
+  padding: 1rem 0.5rem;
+
+  input {
+    @include size(5rem, 3rem);
+    padding: 0.5rem;
+  }
+
+  a {
+    color: $primary;
+    font-size: 1.4rem;
+  }
+
+  img {
+    @include size(8rem, 8rem);
+    margin-right: 1rem;
+  }
+}
+
+.total-price {
+  @include flex-column;
+  justify-content: flex-end;
+  align-items: end;
+  margin-top: 2rem;
+}
+
+.total-price a {
+  display: inline-block;
+  background-color: $primary;
+  color: $white;
+  padding: 0.7rem 1.6rem;
+  font-weight: 700;
+  border-radius: 3rem;
+}
+
+.total-price table {
+  border-top: 3px solid $primary;
+  @include size(100%);
+  max-width: 35rem;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+th:last-child {
+  text-align: right;
+}
+
+@include for-xs {
+  .card-info p {
+    display: none;
+  }
+}
