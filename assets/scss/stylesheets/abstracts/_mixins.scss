@@ -1,0 +1,113 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@mixin size($width: null, $height: null) {
+  width: $width;
+  height: $height;
+}
+
+@mixin direction($top: null, $right: null, $bottom: null, $left: null) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin fade($type) {
+  @if $type== 'hide' {
+    visibility: hidden;
+    opacity: 0;
+  } @else if $type== 'show' {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// MEDIA Querries
+
+@mixin for-xs {
+  @media (max-width: 567px) {
+    @content;
+  }
+}
+@mixin for-sm {
+  @media (max-width: 650px) {
+    @content;
+  }
+}
+@mixin for-md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin for-lg {
+  @media (max-width: 968px) {
+    @content;
+  }
+}
+
+@mixin for-lg-up {
+  @media (max-width: 996px) {
+    @content;
+  }
+}
+
+@mixin for-xl {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin transition-300($ease: ease) {
+  transition: all 300ms $ease;
+}
+
+@mixin transition-500($ease: ease-in-out) {
+  transition: all 500ms $ease;
+}
+
+@mixin box-content {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

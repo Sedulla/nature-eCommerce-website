@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+$text-font-stack: 'Open Sans', sans-serif;
+
+// COLORS
+$primary: #69ae14;
+$white: #fff;
+$black: #222;
+$grey1: #3a3b3c;
+$grey2: #828282;
+
+$c-op-1: rgba(0, 0, 0, 0.1);
+$c-op-3: rgba(0, 0, 0, 0.3);
+$c-op-4: rgba(0, 0, 0, 0.4);
+$c-op-8: rgba(0, 0, 0, 0.8);
+$c-op-255: rgba(255, 255, 255, 0.09);
+
+$z-index: (
+  'skyscraper': 1000,
+  'postbox': 10,
+  'curb': 1,
+  'pavement': 0,
+  'pothole': -1,
+);

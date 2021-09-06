@@ -1,0 +1,148 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the hero of the site/application.
+// -----------------------------------------------------------------------------
+
+.hero {
+  @include size($height: 100vh);
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-container,
+.hero .row {
+  @include size(100%, 100%);
+}
+
+.hero .row {
+  position: relative;
+
+  img {
+    @include size(100%, 100%);
+    object-fit: cover;
+  }
+}
+
+.hero .row .content {
+  position: absolute;
+  @include direction($top: 50%, $left: 80px);
+  transform: translateY(-50%);
+
+  h1 {
+    line-height: 1.2;
+    font-size: 5rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 1rem 0 1rem;
+    width: 70%;
+  }
+
+  a {
+    display: inline-block;
+    color: $white;
+    background-color: $primary;
+    border-radius: 5px;
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+  }
+
+  span {
+    color: $primary;
+  }
+}
+
+.swiper-slide-active .content {
+  h1 {
+    animation: movebottom 1s ease-in-out;
+  }
+
+  a {
+    animation: movetop 1s ease-in-out;
+  }
+
+  p {
+    animation: moveleft 1s ease-in-out;
+  }
+}
+
+@keyframes movebottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes movetop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes moveleft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.hero .arrows {
+  position: absolute;
+  @include direction($top: 50%);
+  transform: translateY(-50%);
+  @include size(100%);
+  z-index: 10;
+  @include fade(hide);
+  @include transition-500($ease: ease-out);
+}
+
+.hero:hover .arrows {
+  @include fade(show);
+}
+
+.arrows .swiper-prev,
+.arrows .swiper-next {
+  position: absolute;
+  padding: 0.5rem 0.7rem;
+  background-color: $primary;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+}
+
+.arrows .swiper-prev {
+  @include direction($left: 20px);
+}
+
+.arrows .swiper-next {
+  @include direction($right: 20px);
+}
+
+@include for-xs {
+  .hero .row .content {
+    @include direction($left: 20px);
+
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      width: 80%;
+    }
+  }
+}
