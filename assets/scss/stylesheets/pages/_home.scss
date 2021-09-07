@@ -2,6 +2,18 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
+@include for-xl {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@include for-md {
+  .container {
+    max-width: 60rem;
+  }
+}
+
 /* PROMOTION */
 
 .section {
